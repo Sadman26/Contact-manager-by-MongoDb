@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+</head>
+<body>
+    <style>
+        .signupapp{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+        }
+        .signupapp input{
+            margin: 10px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            margin-top: 10px;
+        }
+    </style>
+    <form action="/signup" method="post">
+        <div class="signupapp">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+            <input type="submit" value="Signup">
+        </div>
+        <!--make a signup btn-->
+        <a href="{{url_for('login')}}">Login</a>
+    </form>
+</body>
+</html>

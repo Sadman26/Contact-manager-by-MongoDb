@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <style>
+        .loginapp{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+        }
+        .loginapp input{
+            margin: 10px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            margin-top: 10px;
+        }
+    </style>
+    <form action="/" method="post">
+        <div class="loginapp">
+            <label for="username">Username</label>
+        <input type="text" name="username" id="username">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+        <input type="submit" value="Login">
+        </div>
+        <!--make a signup btn-->
+        <a href="{{url_for('signup')}}">Sign Up</a>
+    </form>
+    
+</body>
+</html>

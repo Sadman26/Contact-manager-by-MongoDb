@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/91b44b9c3e.js" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+</head>
+<body>
+    <h1>Google keep Notes</h1>
+    <style>
+        h1{
+            text-align: center;
+        }
+    </style>
+    {%block content%}
+    <div class="inputbox">
+        <form action="/edit/{{result._id}}" method="POST">
+            <input type="text" name="name" placeholder="Enter your name" autocomplete="off" value="{{result.name}}">
+            <input type="text" name="num" placeholder="Enter your age" autocomplete="off" value="{{result.num}}">
+            <button type="submit">Update</button>
+        </form>
+    </div>
+    {% endblock %}
+</body>
+</html>
