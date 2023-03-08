@@ -8,8 +8,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>My Contacts</h1><span><a href="{{url_for('logout')}}"><i class="fa-solid fa-right-from-bracket"></i></a></span>
+    <h1>My Contacts</h1>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
         h1{
             text-align: center;
         }
@@ -18,6 +19,10 @@
             display: flex;
             flex-wrap: wrap;
         }
+        body{
+            background: rgb(63,94,251);
+background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+        }
         h1{
             font-family: 'Tilt Neon', cursive;
         }
@@ -25,7 +30,7 @@
             background-color: rgb(1, 139, 245);
             width: 200px;
             border-radius: 5px;
-            box-shadow: 2px 4px 4px gray;
+            box-shadow: 2px 4px 4px black;
             text-align: center;
             padding: 10px;
             margin: 10px;
@@ -44,12 +49,44 @@
             margin: 5px;
             cursor: pointer;
         }
+        .inputbox{
+            padding: 10px;
+            text-align: center;
+        
+        }
+        input {
+            padding: 0.5em;
+            font-size: 1.2em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 1em;
+          }
+        .awesome-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 0.5em 1em;
+            font-size: 1.2em;
+            cursor: pointer;
+          }
+          
+          .awesome-button:hover {
+            background-color: #3e8e41;
+          }
+          .logoutbtn{
+            background-color: #ded702;
+            position: absolute;
+            top: 50px;
+            border-radius: 10px;
+            padding: 2px;
+          }
     </style>
     <div class="inputbox">
         <form action="/add" method="POST">
             <input type="text" name="name" placeholder="Enter Name" autocomplete="off">
             <input type="number" name="num" placeholder="Enter Phone Number" autocomplete="off">
-            <button type="submit">Add</button>
+            <button class="awesome-button" type="submit">Add</button>
         </form>
     </div>
     <div class="container">
@@ -61,6 +98,9 @@
             <h2>{{i.num}}</h2>
         </div>  
         {% endfor %}    
+    </div>
+    <div class="logoutbtn">
+        <h3>Logout <span><a href="{{url_for('logout')}}"><i class="fa-solid fa-right-from-bracket"></i></a></span></h3>
     </div>
 </body>
 </html>
